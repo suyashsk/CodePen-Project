@@ -24,7 +24,18 @@ const Projects = () => {
   return (
     <div className='w-full py-6 flex items-center justify-center
     gap-6 flex-wrap'>
-
+        {/* <iframe
+src="https://www.chatbase.co/chatbot-iframe/ctl8mqyTyIAXOGc15jYPk"
+width="100%"
+style={{height:"100%", minHeight: "700px"}}
+frameborder="0"
+></iframe> */}
+{/* <iframe
+src="https://www.chatbase.co/chatbot-iframe/ctl8mqyTyIAXOGc15jYPk"
+width="100%"
+style={{height:"100%", minHeight: "500px", width:"400px" , position:"absolute"}}
+frameborder="0"
+></iframe> */}
       {
         filtered ?  <>
           {
@@ -44,6 +55,7 @@ const Projects = () => {
           })
         }</>
       }
+
     </div>
   )
 }

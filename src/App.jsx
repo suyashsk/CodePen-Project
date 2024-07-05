@@ -66,6 +66,7 @@ function App() {
         <Routes>
           <Route path='/home/*' element={<Home />} />
           <Route path='/newProject' element={<NewProject />} />
+          
           {/* {if the route is not matching then naviagte the user tho the /home 
           which is the default page} */}
           <Route path="*" element={<Navigate to="/home" />} />

@@ -97,6 +97,7 @@ const Home = () => {
           <Routes>
             <Route path='/*' element={<Projects />} />
             <Route path='/auth' element={<SignUp />}/>
+            
           </Routes>
         </div>
       </div>

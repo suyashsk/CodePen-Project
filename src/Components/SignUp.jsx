@@ -9,6 +9,8 @@ import { signINWithGitHub, signINWithGoogle } from '../Utils/helper';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Config/firebase.config';
 import {fadeInOut} from '../animation'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const[email,setEmail] = useState("");
   const[password,setPassword] = useState("");
@@ -22,8 +24,14 @@ const SignUp = () => {
       await createUserWithEmailAndPassword(auth,email,password).then(userCred =>{
         if(userCred){
           console.log(userCred);
+          toast.success("Sign Up Successful")
         }
-      }).catch((err)=>console.log(err))
+      }).catch((err)=>
+        {
+          toast.error("Failed to SignUp")
+          console.log(err)
+          
+        })
     }
   }
 
@@ -32,20 +40,24 @@ const SignUp = () => {
       await signInWithEmailAndPassword(auth,email,password).then(userCred=>{
         if(userCred){
           console.log(userCred);
+          toast.success("Welcome to CodePen")
         }
       }).catch((err)=>{
         console.log(err.message);
         if(err.message.includes("user-not-found")){
           setAlert(true);
           setAlertMessage("Invaild Id : User not Found")
+          toast.error("Invalid Email id or Password")
         }
         else if(err.message.includes("wrong-password")){
           setAlert(true);
           setAlertMessage("Password Mismatch")
+          toast.error("Invalid Email id or Password")
         }
         else{
           setAlert(true);
-          setAlertMessage("Temprorarily disabled due to many failed login!")
+          setAlertMessage("Invalid email id or password !")
+          toast.error("Invalid Email id or Password")
         }
         setInterval(()=>{
           setAlert(false)
@@ -141,6 +153,8 @@ const SignUp = () => {
             </motion.div>
           </div>
       </div>
+      <ToastContainer 
+      position='top-center'/>
     </div>
   )
 }
