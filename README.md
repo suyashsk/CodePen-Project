@@ -10,20 +10,28 @@ The CodePen Clone project is a web-based code editor designed for web developers
 1. Authentication:
   Users can sign up and log in using email/password authentication via Firebase.
   Alternatively, sign in with Google or GitHub for a seamless experience.
-2. Code Editor (CodeMirror):
+
+3. Code Editor (CodeMirror):
   The heart of the project is the code editor powered by CodeMirror.
   CodeMirror supports syntax highlighting for various languages, making it easy to write HTML, CSS, and JavaScript.
-3. Project Sections:
+
+4. Project Sections:
   Upon creating a new project, users have three separate sections:
   HTML: Write and preview your HTML markup.
   CSS: Style your webpage using CSS.
   JavaScript: Add interactivity and functionality.
-4. Global State Management (Redux):
+
+5. Global State Management (Redux):
   Redux is used to manage global application state.
   Store user data, project details, and other relevant information.
-5. Data Persistence (Firestore):
+
+6. Data Persistence (Firestore):
   Firestore, part of Firebase, is used for data storage and retrieval.
   Save and load project data seamlessly.
+
+7. AI Chatbot:
+  Our project includes an AI chatbot that assists developers.
+  The chatbot can help troubleshoot issues, provide code suggestions, and answer common questions.
 
   **Getting Started**
   
